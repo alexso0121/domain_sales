@@ -13,7 +13,7 @@ import java.util.Map;
 @Service
 public class ProductsMapHandler {
 
-    public static Map<Product,String> DtoToMap(ProductMapDto dto){
+    public  Map<Product,String> DtoToMap(ProductMapDto dto){
         List<String> value_list= List.of(dto.values().split(","));
         if(dto.keys().size()!=value_list.size()) {
             throw new ProductMapInternalException("can not generate map due to the difference in size of keys and values");
@@ -27,7 +27,7 @@ public class ProductsMapHandler {
         return map;
     }
 
-    public static ProductMapDto MapToDto(Map<Product,String> map){
+    public  ProductMapDto MapToDto(Map<Product,String> map){
 
 
         List<Product> keys=new ArrayList<>(map.keySet());

@@ -13,6 +13,12 @@ import java.util.function.Function;
 public class OrderRequestToOrder implements Function<OrderRequest, Order> {
 
 
+    private final ProductsMapHandler ProductsMapHandler;
+
+    public OrderRequestToOrder(org.example.utils.ProductsMapHandler productsMapHandler) {
+        ProductsMapHandler = productsMapHandler;
+    }
+
     @Override
     public Order apply(OrderRequest orderRequest) {
         ProductMapDto dto=ProductsMapHandler.MapToDto(orderRequest.productMap());
@@ -21,6 +27,10 @@ public class OrderRequestToOrder implements Function<OrderRequest, Order> {
                 .invoice(orderRequest.invoice())
                 .amount(orderRequest.amount())
                 .customer(orderRequest.customer())
+                .date(orderRequest.date())
+                .dueDate(orderRequest.dueDate())
+                .productsMap_key(dto.keys())
+                .productsMap_value(dto.values())
                 .build();
     }
 }
