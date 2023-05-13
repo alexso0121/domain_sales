@@ -21,9 +21,9 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "op_fk")
-    private List<Product> productsMap_key;
+    private List<ProductMap> productsMap_key;
 
-    private String productsMap_value;
+
 
     private double amount;
 

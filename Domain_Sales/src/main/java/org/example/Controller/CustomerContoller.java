@@ -34,9 +34,15 @@ public class CustomerContoller {
         return customerService.Update(request);
     }
 
-    @DeleteMapping("/Delete")
+    @DeleteMapping("/Delete/{Id}")
     public ResponseEntity<String> Delete(@PathVariable UUID Id){
         return customerService.Delete(Id);
+    }
+
+
+    @GetMapping("/Query")
+    public ResponseEntity<List<CustomerResponse>> Query(){
+        return customerService.Query();
     }
 
 
