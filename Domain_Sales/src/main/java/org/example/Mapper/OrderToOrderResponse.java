@@ -2,7 +2,7 @@ package org.example.Mapper;
 
 import org.example.Model.Order;
 import org.example.Model.Product;
-import org.example.dto.OrderResponse;
+import org.example.dto.Response.OrderResponse;
 import org.example.dto.ProductMapDto;
 import org.example.utils.ProductsMapHandler;
 import org.springframework.stereotype.Service;
@@ -19,8 +19,7 @@ public class OrderToOrderResponse implements Function<Order, OrderResponse> {
     }
     @Override
     public OrderResponse apply(Order order) {
-        ProductMapDto dto=new ProductMapDto(order.getProductsMap_key(),order.getProductsMap_value());
-        Map<Product,String> map= ProductsMapHandler.DtoToMap(dto);
+        order.getProductsMap()
         return new OrderResponse(
                 order.getOrderId(),
                 map,

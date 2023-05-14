@@ -2,8 +2,8 @@ package org.example.Controller;
 
 import org.example.Service.CustomerServiceI;
 import org.example.Service.ServiceImpl.CustomerServiceImpl;
-import org.example.dto.CustomerRequest;
-import org.example.dto.CustomerResponse;
+import org.example.dto.Request.CustomerRequest;
+import org.example.dto.Response.CustomerResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

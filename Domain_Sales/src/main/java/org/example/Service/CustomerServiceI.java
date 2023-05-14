@@ -1,13 +1,10 @@
 package org.example.Service;
 
-import org.example.Model.Customer;
 import org.example.Model.Order;
-import org.example.Model.Product;
-import org.example.dto.CustomerRequest;
-import org.example.dto.CustomerResponse;
+import org.example.dto.Request.CustomerRequest;
+import org.example.dto.Response.CustomerResponse;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 

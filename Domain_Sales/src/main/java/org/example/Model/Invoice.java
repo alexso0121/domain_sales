@@ -18,9 +18,8 @@ import java.util.UUID;
 public class Invoice {
     @Id
     @GeneratedValue
-    private UUID OrderId;
+    private UUID InvoiceId;
 
-    private String OrderName;
 
     private double price;
 
@@ -34,7 +33,7 @@ public class Invoice {
     @Value("${company.banking.selfNote}")
     private String SelfNote;
 
-    enum PaymentType{
+    public enum PaymentType{
         Visa,
         Cash,
         Payme,

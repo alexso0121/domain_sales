@@ -1,4 +1,4 @@
-package org.example.dto;
+package org.example.dto.Request;
 
 import jakarta.annotation.Nullable;
 import org.example.Model.Order;

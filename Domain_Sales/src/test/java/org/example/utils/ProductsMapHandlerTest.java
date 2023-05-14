@@ -1,6 +1,7 @@
 package org.example.utils;
 
 import org.example.Model.Product;
+import org.example.Model.ProductMap;
 import org.example.dto.ProductMapDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -47,5 +48,22 @@ class ProductsMapHandlerTest {
         ProductMapDto expect=new ProductMapDto(List.of(product2,product1),"value2,value1");
 
         Assertions.assertEquals(ProductsMapHandler.MapToDto(map),expect);
+    }
+
+    @Test
+    void listToMap() {
+        //unit test for listToMap
+        List<ProductMap> productMaps=List.of(new ProductMap(null,null,null,1),new ProductMap(null,null,null,2));
+
+        Map<Product,Integer> expect=new HashMap<>();
+        expect.put(null,1);
+        expect.put(null,2);
+
+        Assertions.assertEquals(ProductsMapHandler.ListToMap(productMaps),expect);
+
+    }
+
+    @Test
+    void mapToList() {
     }
 }

@@ -1,9 +1,6 @@
 package org.example.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,7 +21,9 @@ public class ProductMap {
 
     private UUID OrderId;
 
-    private UUID ProductId;
+    @OneToOne
+    @MapsId
+    private Product product;
 
     private int quantity;
 }

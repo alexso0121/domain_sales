@@ -2,13 +2,11 @@ package org.example.utils;
 
 import org.example.Exception.utilsException.ProductMapInternalException;
 import org.example.Model.Product;
+import org.example.Model.ProductMap;
 import org.example.dto.ProductMapDto;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class ProductsMapHandler {
@@ -38,6 +36,24 @@ public class ProductsMapHandler {
         str.deleteCharAt(str.length() - 1);
 
         return new ProductMapDto(keys,str.toString());
+    }
+
+    public Map<Product,Integer> ListToMap(List<ProductMap> productMaps){
+        Map<Product,Integer> map=new HashMap<>();
+       for(ProductMap productMap:productMaps){
+           map.put(productMap.getProduct(),productMap.getQuantity());
+       }
+         return map;
+
+    }
+
+    //MaptoList
+    public List<ProductMap> MapToList(Map<Product,Integer> map, UUID orderId){
+        List<ProductMap> productMaps=new ArrayList<>();
+        for(Product product:map.keySet()){
+            productMaps.add(new ProductMap(null,orderId,product,map.get(product)));
+        }
+        return productMaps;
     }
 
 

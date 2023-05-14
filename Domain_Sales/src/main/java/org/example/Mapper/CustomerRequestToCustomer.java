@@ -1,8 +1,7 @@
 package org.example.Mapper;
 
 import org.example.Model.Customer;
-import org.example.dto.CustomerRequest;
-import org.example.dto.CustomerResponse;
+import org.example.dto.Request.CustomerRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.function.Function;

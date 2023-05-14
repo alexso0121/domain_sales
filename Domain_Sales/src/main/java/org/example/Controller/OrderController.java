@@ -2,8 +2,8 @@ package org.example.Controller;
 
 
 import org.example.Service.ServiceImpl.OrderServiceImpl;
-import org.example.dto.OrderRequest;
-import org.example.dto.OrderResponse;
+import org.example.dto.Request.OrderRequest;
+import org.example.dto.Response.OrderResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

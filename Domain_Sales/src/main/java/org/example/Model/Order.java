@@ -21,7 +21,7 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "op_fk")
-    private List<ProductMap> productsMap_key;
+    private List<ProductMap> productsMap;
 
 
 
